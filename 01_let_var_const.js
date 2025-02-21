@@ -6,13 +6,12 @@ let accountState;
 
 // accountId = 2345; // Error: Assignment to constant variable. (Cannot change the value of a constant variable)
 
-
 accountEmail = "hchc@email.com";
 accountPassword = "212121";
 accountCity = "Lahore";
 
 console.log(accountId);
-console.table([accountEmail,accountPassword,accountCity,accountState]);
+console.table([accountEmail, accountPassword, accountCity, accountState]);
 
 /*
 Prefer not to use var because of issue in block scope and functional scope
