@@ -94,6 +94,30 @@ console.log(gameName.trim()); // Output: DeM()n! (removes white spaces from star
 console.log(gameName.repeat(2)); // Output: DeM()n!DeM()n! (repeats the string 2 times)
 console.log(gameName.padEnd(10, "*")); // Output: DeM()n!*** (adds * to the end of the string)
 console.log(gameName.padStart(10, "*")); // Output: ***DeM()n! (adds * to the start of the string)
+console.log(gameName.bold()); // Output: <b>DeM()n!</b> (makes the text bold)
+console.log(gameName.fontcolor("red")); // Output: <font color="red">DeM()n!</font> (changes the color of the text)
+console.log(gameName.fontsize(5)); // Output: <font size="5">DeM()n!</font> (changes the size of the text)
+console.log(gameName.link("https://www.google.com")); // Output: <a href="https://www.google.com">DeM()n!</a> (creates a link)
+console.log(gameName.strike()); // Output: <strike>DeM()n!</strike> (adds a strike through the text)
+console.log(gameName.sub()); // Output: <sub>DeM()n!</sub> (subscript)
+console.log(gameName.sup()); // Output: <sup>DeM()n!</sup> (superscript)
+console.log(gameName.italics()); // Output: <i>DeM()n!</i> (italic)
+console.log(gameName.small()); // Output: <small>DeM()n!</small> (small text)
+console.log(gameName.big()); // Output: <big>DeM()n!</big> (big text)
+console.log(gameName.fixed()); // Output: <tt>DeM()n!</tt> (fixed width text)
+console.log(gameName.blink()); // Output: <blink>DeM()n!</blink> (blinking text)
+console.log(gameName.fontcolor("red").fontsize(5).bold()); // Output: <b><font size="5" color="red">DeM()n!</font></b> (chaining multiple methods)
+console.log(gameName.fontcolor("red").fontsize(5).bold().link("https://www.google.com"));
+// Output: <a href="https://www.google.com"><b><font size="5" color="red">DeM()n!</font></b></a> (chaining multiple methods)
+console.log(gameName.fontcolor("red").fontsize(5).bold().link("https://www.google.com").strike().sub());
+// Output: <a href="https://www.google.com"><strike><sub><b><font size="5" color="red">DeM()n!</font></b></sub></strike></a> (chaining multiple methods)
+console.log(gameName.at(0)); // Output: D (returns the character at the specified index)
+console.log(gameName.codePointAt(0)); // Output: 68 (returns the Unicode of the character at the specified index)
+console.log(gameName.padEnd(10, "*")); // Output: DeM()n!*** (pads the current string with another string until the resulting string reaches the given length)
+console.log(gameName.padStart(10, "*")); // Output: ***DeM()n! (pads the current string with another string until the resulting string reaches the given length)
+console.log(gameName.anchor("game")); // Output: <a name="game">DeM()n!</a> (creates an anchor)
+
+console.log("***************************************************************************************************************************************")
 
 const newString = gameName.substring(0, 4); // it does not include the last index. Also it ignores negative index.
 console.log(newString); // Output: DeM(
