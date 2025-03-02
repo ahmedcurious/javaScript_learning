@@ -78,6 +78,7 @@ const myn1 = myArr.slice(1,3); //It will slice and bring the elements from index
 console.log(`myn1: ${myn1}`);
 
 const myn2 = myArr.splice(1,3);  //It will bring the elemnts from index 1 to 3, 3 will be included
+//It basically asks for starting index, delete count and it can also add another element at the place of deleted element
 // The difference between slice and splice is that splice manipulates the original Array and cuts the values from the original Array
 console.log(`myn2: ${myn2}`);
 
