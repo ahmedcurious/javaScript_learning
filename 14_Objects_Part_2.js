@@ -1,6 +1,6 @@
 const tinderUser = new Object(); // singleton Object
 
-const tinderUser2 = {}; //Non Singleton Object
+const tinderUser2 = {}; // Non Singleton Objectcode 
 
 // Both methods will return an empty Object: {}
 
