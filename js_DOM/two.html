@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | Creating New Elements</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent"></div>
+  </body>
+  <script>
+    const divArray = ["Ahmed", "Ali", "Usman", "Mubeen", "Zulfi"];
+
+    function createDiv(divText) {
+      const div = document.createElement("div");
+      div.className = `div_${Math.floor(Math.random() + 1)}`;
+      div.id = `div_id_${Math.floor(Math.random() + 1)}`;
+      div.setAttribute("title", `Div Title ${Math.floor(Math.random() + 1)}`);
+      const addText = document.createTextNode(divText);
+      div.appendChild(addText);
+      div.style.color = "#ffffff";
+      div.style.backgroundColor = "green";
+      div.style.padding = "12px";
+      div.style.borderRadius = "20px";
+      div.style.marginBottom = "10px";
+      document.body.appendChild(div);
+    }
+
+    divArray.map(createDiv);
+  </script>
+</html>
