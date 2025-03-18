@@ -42,9 +42,9 @@ function resetGame() {
     remGuess.textContent = numRemainingGuess;
     prevGuess.textContent = prevGuessArray[prevGuessArray.length - 1];
     resultDiv.querySelector(".reset_btn").remove();
-    console.log(
-      `numGuess = ${numGuess}, prevGuessArray = ${prevGuessArray}, playGame = ${playGame}`
-    );
+    // console.log(
+    //   `numGuess = ${numGuess}, prevGuessArray = ${prevGuessArray}, playGame = ${playGame}`
+    // );
   });
   resultDiv.appendChild(resetButton);
 }
@@ -136,10 +136,6 @@ function displayGuess(guess) {
       checkGuess(guess);
       numGuess += 1;
       clearMessage();
-      console.log(
-        `numGuess = ${numGuess}, prevGuessArray = ${prevGuessArray}, playGame = ${playGame}`
-      );
-
       if (numGuess === 10) {
         playGame = false;
         if (guess === randonNumber) {
@@ -150,9 +146,6 @@ function displayGuess(guess) {
           return;
         } else {
           gameOver();
-          console.log(
-            `numGuess = ${numGuess}, prevGuessArray = ${prevGuessArray}, playGame = ${playGame}`
-          );
         }
       }
     }
