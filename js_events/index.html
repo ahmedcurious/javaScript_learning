@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing Image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const owlImg = document.querySelector("#owl");
+    const imagesUl = document.querySelector("#images");
+    const googleLink = document.querySelector("#google");
+    const innerImages = imagesUl.querySelectorAll("img");
+
+    //onClick is not a good approach, it creates problems
+    // owlImg.onclick = function name(params) {
+    //   alert("Owl Click");
+    // };
+
+    //attachEvents() - Earlier it was used during Internet Explorer Days
+    //jquery - on
+
+    // Events to study
+    //type, timeStamps, preventDefault
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altKey, ctrlKey, shiftKey, keyCode
+    //EventCapturing & EventBubbling
+
+    //
+    //addEventListener('click',(e)=>{},false) = "false" perameter = "Event Bubbling" (Bottom to top heirarchy)
+    //addEventListener('click',(e)=>{},true) = "true" perameter = "Event Capturing" (top to bottom heirarchy)
+    //By Default it's always "false"
+
+    owlImg.addEventListener(
+      "click",
+      (e) => {
+        console.log("Owl Clicked");
+        e.stopPropagation(); //This stops event bubbling
+      },
+      false
+    );
+
+    imagesUl.addEventListener(
+      "click",
+      (e) => {
+        console.log("Clicked Inside UL");
+      },
+      false
+    );
+
+    googleLink.addEventListener(
+      "click",
+      (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("Google Link Clicked");
+      },
+      false
+    );
+
+    innerImages.forEach((item) => {
+      item.addEventListener(
+        "click",
+        (e) => {
+          if (e.target.tagName === "IMG") {
+            let removeItem = e.target.parentNode;
+            removeItem.remove();
+          }
+        },
+        false
+      );
+    });
+  </script>
+</html>
