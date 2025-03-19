@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #ffffff">
+    <h1>Async javaScript</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const sayAhmed = () => console.log("Ahmed");
+    setTimeout(sayAhmed, 2000);
+
+    const changeText = () =>
+      (document.querySelector("h1").innerText = "Best Async javaScript Series");
+
+    const changeMe = setTimeout(changeText, 3000);
+
+    //for clearTimeout to work we have to provide it the refernce of the setTimeout function
+    // clearTimeout(changeMe);
+
+    const stopButton = document.querySelector("#stop");
+    stopButton.addEventListener(
+      "click",
+      (e) => {
+        clearTimeout(changeMe);
+        console.log("Stopped");
+      },
+      false
+    );
+  </script>
+</html>

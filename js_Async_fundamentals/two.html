@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #ffffff">
+    <h1>Async JavaScript Tutorial</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    //setInterval() function takes three arguments
+    //1. the function to be executed
+    //2. the time interval in milliseconds
+    //3. the arguments to be passed to the function
+    // setInterval(function(),time(milliseconds),arguments for the function)
+
+    // setInterval(
+    //   (str) => {
+    //     const date = new Date();
+    //     console.log(`${str}: ${date.toLocaleTimeString()}`);
+    //   },
+    //   1000,
+    //   "Ahmed's Time"
+    // );
+
+    const startButton = document.querySelector("#start");
+    const stopButton = document.querySelector("#stop");
+
+    const getTime = (str) => {
+      const date = new Date();
+      console.log(`${str}: ${date.toLocaleTimeString()}`);
+    };
+    let intervalId;
+
+    startButton.addEventListener(
+      "click",
+      (e) => {
+        console.log("Timer Started");
+        intervalId = setInterval(getTime, 1000, "Current Time:");
+      },
+      false
+    );
+
+    stopButton.addEventListener(
+      "click",
+      (e) => {
+        console.log("Timer Stopped");
+        clearInterval(intervalId);
+      },
+      false
+    );
+  </script>
+</html>
