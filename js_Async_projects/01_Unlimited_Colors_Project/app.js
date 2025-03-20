@@ -26,7 +26,6 @@ function randomColorHex() {
   body.style.backgroundColor = color;
   colorCodeDisplay.textContent = color;
 }
-// randomColorHex();
 
 let colorInterval;
 
