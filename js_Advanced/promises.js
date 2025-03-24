@@ -83,4 +83,18 @@ async function getGithubUsers() {
   }
 }
 
-getGithubUsers();
+// getGithubUsers();
+
+fetch("https://api.github.com/users/ahmedcurious")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log("E:", error);
+  })
+  .finally(() => {
+    console.log("Fetch: Promise either resolved or rejected");
+  });
